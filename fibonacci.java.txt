@@ -1,0 +1,76 @@
+/* package whatever; // don't place package name! */
+ 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+ 
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		System.out.println("Para el tipo de dato byte se produce overflow en el elemento No "+fib_byte_max());
+		System.out.println("Para el tipo de dato short se produce overflow en el elemento No "+fib_short_max());
+		System.out.println("Para el tipo de dato int se produce overflow en el elemento No "+fib_int_max());
+		System.out.println("Para el tipo de dato long se produce overflow en el elemento No "+fib_long_max());
+	}
+	public static int fib_int_max(){
+		int x=0;
+		int y=1;
+		int i=1;
+		while (y>0){
+			y=y+x;
+			x=y-x;
+			i++;
+		}
+		return i;
+	}
+ 
+	public static int fib_short_max(){
+		short x=0;
+		short y=1;
+		int i=1;
+		while (y>0){
+			y=(short)(y+x);
+			x=(short)(y-x);
+			i++;
+		}
+		return i;
+	}
+ 
+	public static int fib_long_max(){
+		long x=0;
+		long y=1;
+		int i=1;
+		while (y>0){
+			y=y+x;
+			x=y-x;
+			i++;
+		}
+		return i;
+	}
+ 
+	public static int fib_byte_max(){
+		byte x=0;
+		byte y=1;
+		int i=1;
+		while (y>0){
+			y=(byte)(y+x);
+			x=(byte)(y-x);
+			i++;
+		}
+		return i;
+	}
+	public static long fib(int n){
+		long x=0;
+		long y=1;
+		if (n==0) return 0;
+		for(int i = 0; i< n-1;i++){
+			y=y+x;
+			x=y-x;
+		}
+		return y;
+	}
+ 
+}

@@ -1,0 +1,88 @@
+#include <iostream>
+using namespace std;
+
+int fib_short_max();
+int fib_int_max();
+int fib_long_max();
+int fib_longlong_max();
+long long fibonacci(int n);
+
+int main() {
+	// your code goes here
+	cout<<"Para el tipo de dato short se produce overflow en el elemento No "<<fib_short_max()<<endl;
+	cout<<"Para el tipo de dato int se produce overflow en el elemento No "<<fib_int_max()<<endl;
+	cout<<"Para el tipo de dato long se produce overflow en el elemento No "<<fib_long_max()<<endl;
+	cout<<"Para el tipo de dato long long se produce overflow en el elemento No "<<fib_longlong_max()<<endl;
+	return 0;
+}
+
+int fib_short_max(){
+	short x,y;
+	int i;
+	x=0;
+	y=1;
+	i=1;
+	while(y>0){
+		y=y+x;
+		x=y-x;
+		i++;
+	}
+
+	return i;
+}
+
+int fib_int_max(){
+	int x,y;
+	int i;
+	x=0;
+	y=1;
+	i=1;
+	while(y>0){
+		y=y+x;
+		x=y-x;
+		i++;
+	}
+
+	return i;
+}
+
+int fib_long_max(){
+	long x,y;
+	int i;
+	x=0;
+	y=1;
+	i=1;
+	while(y>0){
+		y=y+x;
+		x=y-x;
+		i++;
+	}
+
+	return i;
+}
+
+int fib_longlong_max(){
+	long long x,y;
+	int i;
+	x=0;
+	y=1;
+	i=1;
+	while(y>0){
+		y=y+x;
+		x=y-x;
+		i++;
+	}
+
+	return i;
+}
+
+long long fibonacci(int n){
+	long long x,y;
+	x=0;
+	y=1;
+	for (int i=0;i<n-1;i++){
+		y=y+x;
+		x=y-x;
+	}
+	return y;
+}
